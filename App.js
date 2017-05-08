@@ -1,15 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <SensorData name="Humidity" data="24"/>
+        <SensorData name="Air temp" data="56" />
+        <GetData />
       </View>
     );
+  }
+}
+
+class SensorData extends Component {
+  render(){
+    return (
+      <Text>{this.props.name}: {this.props.data}</Text>
+    )
+  }
+}
+
+class GetData extends Component {
+  constructor(props){
+    super(props)
+    this.state = { data: false }
+    let pollRateSec = 15
+
+    setInterval(() => {
+      this.setState( { data: !this.state.data } )
+    }, pollRateSec * 1000)
+  }
+
+  render(){
+    return(
+      <Text>State: {this.state.data.toString()} </Text>
+    )
   }
 }
 
