@@ -25,12 +25,25 @@ class GetData extends Component {
   constructor(props){
     super(props)
     this.state = { data: false }
-    let pollRateSec = 15
+    let pollRateSec = 4
 
     setInterval(() => {
-      this.setState( { data: !this.state.data } )
+      //this.setState( { data: !this.state.data } )
+      pullDht()
     }, pollRateSec * 1000)
+    
+    async function pullDht() {
+      try {
+        console.log("got into async func")
+        let response = await fetch('http://192.168.0.103:8888');
+        let responseJson = await response.json()
+        //this.setState( { data: !this.state.data } )
+      } catch(error) {
+        console.error(error);
+      }
+    }
   }
+
 
   render(){
     return(
@@ -45,5 +58,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
