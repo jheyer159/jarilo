@@ -1,8 +1,24 @@
 import React, { Component } from "react"
 import { StyleSheet, Text, View } from "react-native"
+import { StackNavigator } from 'react-navigation'
 
 export default class App extends Component {
 	render() {
+		return (
+      <View style={styles.container}>
+        <SensorData name="Humidity" data="24"/>
+        <SensorData name="Air temp" data="56" />
+        <GetData />
+      </View>
+		)
+	}
+}
+
+class HomeScreen extends Component {
+  static navigationOptions = {
+    title: 'Welcome'
+  }
+ render() {
 		return (
       <View style={styles.container}>
         <SensorData name="Humidity" data="24"/>
