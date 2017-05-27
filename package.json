@@ -1,8 +1,8 @@
 {
-  "name": "tabs",
-  "version": "0.0.0",
-  "description": "Hello Expo!",
-  "author": null,
+  "name": "grow-app",
+  "version": "0.0.1",
+  "private": true,
+  "author": "rug",
   "main": "main.js",
   "scripts": {
     "test": "node node_modules/jest/bin/jest.js"
@@ -13,7 +13,7 @@
   "dependencies": {
     "@expo/ex-navigation": "~3.0.0",
     "@expo/samples": "~1.0.3",
-    "expo": "17.0.0",
+    "expo": "^17.0.0",
     "react": "16.0.0-alpha.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-17.0.0.tar.gz"
   },
