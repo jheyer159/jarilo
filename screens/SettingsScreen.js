@@ -1,11 +1,11 @@
 import React from 'react';
+import ZeroConf from '../components/zeroConf'
 import { ScrollView, StyleSheet } from 'react-native';
-import { ExpoConfigView } from '@expo/samples';
 
 export default class SettingsScreen extends React.Component {
   static route = {
     navigationBar: {
-      title: 'exp.json',
+      title: 'Settings',
     },
   };
 
@@ -15,9 +15,7 @@ export default class SettingsScreen extends React.Component {
         style={styles.container}
         contentContainerStyle={this.props.route.getContentContainerStyle()}>
 
-        {/* Go ahead and delete ExpoConfigView and replace it with your
-           * content, we just wanted to give you a quick view of your config */}
-        <ExpoConfigView />
+        <ZeroConf/>
 
       </ScrollView>
     );
